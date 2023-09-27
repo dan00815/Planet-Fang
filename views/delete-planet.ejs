@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>刪除頁面</title>
+  </head>
+  <style>
+    table,
+    tr,
+    td {
+      border: 3px solid rgba(8, 123, 195, 0.973);
+      border-collapse: collapse;
+      padding: 5px;
+      margin-top: 20px;
+    }
+    a.create {
+      text-decoration: none;
+      font-weight: bold;
+      color: darkgreen;
+      background-color: bisque;
+      border: 2px solid white;
+      border-radius: 10px;
+      padding: 5px;
+    }
+    button.create {
+      cursor: pointer;
+      color: red;
+      font-weight: bold;
+      background-color: black;
+    }
+  </style>
+  <body>
+    <table>
+      <tr>
+        <td>名稱</td>
+        <td><%=foundPlanet.name%></td>
+      </tr>
+      <tr>
+        <td>品種</td>
+        <td><%=foundPlanet.detail_name%></td>
+      </tr>
+      <tr>
+        <td>來自</td>
+        <td><%=foundPlanet.where%></td>
+      </tr>
+      <tr>
+        <td>大小</td>
+        <td><%=foundPlanet.size%> CM</td>
+      </tr>
+      <tr>
+        <td>土壤比例</td>
+        <td><%=foundPlanet.soil%></td>
+      </tr>
+      <tr>
+        <td>施肥</td>
+        <td><%=foundPlanet.advanced.fertilizer%></td>
+      </tr>
+      <tr>
+        <td>澆水</td>
+        <td><%=foundPlanet.advanced.water%></td>
+      </tr>
+    </table>
+    <br />
+    <form action="/planets/<%=foundPlanet._id %>?_method=DELETE" method="POST">
+      <button class="create">點下去就不見囉</button>
+      <br />
+      <br />
+      <a href="/planets/<%=foundPlanet.id%>" class="create"
+        >返回<%=foundPlanet.name%>の頁面</a
+      >&nbsp&nbsp&nbsp
+      <a href="/planets" class="create">返回首頁</a>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>修改頁面</title>
+    <style>
+      button.create {
+        font-weight: bold;
+        color: rgba(116, 255, 47, 0.636);
+        background-color: black;
+        border-radius: 10px;
+        margin-top: 15px;
+        cursor: pointer;
+      }
+      a.create {
+        text-decoration: none;
+        font-weight: bold;
+        color: darkgreen;
+        background-color: bisque;
+        border: 2px solid white;
+        border-radius: 10px;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="/planets/<%=foundPlanet._id %>?_method=PUT" method="POST">
+      <label for="name">名稱:</label>
+      <input
+        type="text"
+        name="name"
+        value="<%=foundPlanet.name%>"
+        placeholder="此為必填"
+      /><br />
+      <label for="detail_name">品種:</label>
+      <input
+        type="text"
+        name="detail_name"
+        value="<%=foundPlanet.detail_name%>"
+        placeholder="此為必填"
+      /><br />
+      <label for="where">來自:</label>
+      <input
+        type="text"
+        name="where"
+        value="<%=foundPlanet.where%>"
+        placeholder="如:某花市"
+      /><br />
+      <label for="size">大小:</label>
+      <input
+        type="number"
+        name="size"
+        value="<%=foundPlanet.size%>"
+      />&nbspCM<br />
+      <label for="soil">土壤比例:</label>
+      <input
+        type="text"
+        name="soil"
+        value="<%=foundPlanet.soil%>"
+        placeholder="幾:幾"
+      /><br />
+      <label for="fertilizer">施肥:</label>
+      <input
+        type="text"
+        name="fertilizer"
+        value="<%=foundPlanet.advanced.fertilizer%>"
+      /><br />
+
+      <label for="water">澆水:</label>
+      <input type="radio" name="water" value="true" checked />是
+      <input type="radio" name="water" value="false" />否<br />
+      <button class="create">更新完畢</button>
+    </form>
+    <br />
+    <a href="/planets/<%=foundPlanet.id%>" class="create"
+      >返回<%=foundPlanet.name%>の頁面</a
+    >&nbsp&nbsp&nbsp
+    <a href="/planets" class="create">返回首頁</a>
+  </body>
+</html>

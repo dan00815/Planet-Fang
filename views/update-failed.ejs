@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>錯誤頁面</title>
+    <style>
+      a.create {
+        text-decoration: none;
+        font-weight: bold;
+        color: darkgreen;
+        background-color: bisque;
+        border: 2px solid white;
+        border-radius: 10px;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="color: red">更新失敗</h1>
+    <h2><%=e.message%></h2>
+    <br />
+    <br /><a href="/planets/<%=_id%>/edit" class="create">返回更新頁面</a>
+    &nbsp&nbsp
+    <a href="/planets" class="create">返回首頁</a>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>更新成功頁面</title>
+    <style>
+      table,
+      tr,
+      td {
+        border: 2px solid rgba(8, 195, 142, 0.973);
+        margin-top: 20px;
+      }
+      a.create {
+        text-decoration: none;
+        font-weight: bold;
+        color: darkgreen;
+        background-color: bisque;
+        border: 2px solid white;
+        border-radius: 10px;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="color: red">更新成功</h1>
+    <h3>以下為你更改的資訊</h3>
+
+    <table>
+      <tr>
+        <td>名稱</td>
+        <td><%=updated.name%></td>
+      </tr>
+      <tr>
+        <td>品種</td>
+        <td><%=updated.detail_name%></td>
+      </tr>
+      <tr>
+        <td>來自</td>
+        <td><%=updated.where%></td>
+      </tr>
+      <tr>
+        <td>大小</td>
+        <td><%=updated.size%> cm</td>
+      </tr>
+      <tr>
+        <td>土壤比例</td>
+        <td><%=updated.soil%></td>
+      </tr>
+      <tr>
+        <td>施肥</td>
+        <td><%=updated.advanced.fertilizer%></td>
+      </tr>
+      <tr>
+        <td>澆水</td>
+        <td><%=updated.advanced.water%></td>
+      </tr>
+    </table>
+    <br />
+    <a href="/planets" class="create">返回首頁 </a>
+  </body>
+</html>
