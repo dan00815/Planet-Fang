@@ -8,6 +8,7 @@ const Planet = require("../models/planet");
 router.get("/", async (req, res) => {
   try {
     let basicData = await Planet.find({}).exec();
+    // console.log(basicData);
     // return res.send(basicData);
     return res.render("planetHome", { basicData });
   } catch (e) {

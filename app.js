@@ -6,8 +6,10 @@ dotenv.config();
 const methodOverride = require("method-override");
 const planetRoutes = require("./routes/planet-routes");
 const studentsRoutes = require("./routes/student-routes");
+const cors = require("cors");
 
 mongoose
+  // .connect(process.env.MONGODB_CONNECTION)
   .connect(process.env.MONGODB_CONNECTION)
   .then(() => {
     console.log("成功連接到mongoDB...");
@@ -20,6 +22,7 @@ app.set("view engine", "ejs");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.send("成功");
