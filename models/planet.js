@@ -5,8 +5,7 @@ const { Schema } = mongoose;
 const planetSchema = new Schema({
   name: {
     type: String,
-    reqrired: true,
-
+    required: [true, "名字為必填"],
     default: "等主人幫我想個名字",
   },
   detail_name: {
